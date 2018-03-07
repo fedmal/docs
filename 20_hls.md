@@ -85,6 +85,14 @@
    #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=410000,RESOLUTION=320x180,CODECS="mp4a.40.2,avc1.77.30",CLOSED-CAPTIONS=NONE
    180/playlist-180.m3u8
    ```
+   
+## Конвертация из `.mov` в `.mp4`:
+
+   ```bash
+   SET video_name="название_видео"
+   
+   ffmpeg -i %video_name%.mov -c:a aac -c:v libx264 -vf scale="-1:1080" %video_name%.mp4
+   ```
 
 ## Стандартные размеры видео для HLS
 
